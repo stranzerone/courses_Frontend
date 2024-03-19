@@ -1,0 +1,31 @@
+.navbar-wrapper {
+    background-color: #343a40; /* Navbar background color */
+ padding-bottom: 1rem;
+
+ 
+  }
+  
+  .navbar-main {
+    padding: 10px 20px; /* Add padding to the Navbar */
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem; /* Adjust logo font size */
+    color: #fff; /* Logo text color */
+    margin-right: 20px; /* Add some space between logo and links */
+  }
+  
+  .navbar-links .nav-link {
+    font-weight: 700;
+    color: #fff; /* Link text color */
+    margin-right: 20px; /* Add space between links */
+  }
+  
+  .navbar-links .nav-link:hover {
+    color: #ccc; /* Link text color on hover */
+  }
+  
+  .nav-button {
+    margin-left: auto; /* Push logout button to the right */
+  }
+  
