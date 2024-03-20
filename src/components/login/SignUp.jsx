@@ -62,7 +62,7 @@ const Signup = () => {
           <button type="submit" className="btn btn-primary w-100">Sign Up</button>
         </form>
         <div className="text-center mt-3">
-          <a href="/login" className="text-decoration-none">Already have an account? Log in here.</a>
+          <p onClick={()=>navigate('/')} style={{cursor:"pointer"}} className="text-decoration-none text-primary">Already have an account? Log in here.</p>
         </div>
       </div>
     </div>

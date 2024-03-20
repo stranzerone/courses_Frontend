@@ -36,7 +36,7 @@ const ProfilePage = () => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         }
 
-        const response = await axios.get("http://localhost:5000/product/myPoducts");
+        const response = await axios.get(uri+"/product/myPoducts");
         if (response && response.data) {
           const ids = response.data.map(product => product.ProductId);
           setProductIds(ids);

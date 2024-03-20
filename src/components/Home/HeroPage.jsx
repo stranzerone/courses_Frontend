@@ -2,8 +2,10 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './Hero.css'; // Import your custom CSS file for styling
 import Navigation from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const HeroPage = () => {
+  const navigate=useNavigate()
   return (
     <div>
 
@@ -17,7 +19,7 @@ const HeroPage = () => {
             <div className="hero-content">
               <h1>Welcome to Our Online Learning Platform</h1>
               <p>Unlock your potential with our wide range of digital courses.</p>
-              <Button variant="primary" href="/viewProducts">Explore Courses</Button>
+              <Button variant="primary"  onClick={()=>navigate('/viewProducts')}>Explore Courses</Button>
             </div>
           </Col>
           <Col lg={6} md={12}>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './Hero.css'; // Import your custom CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 const HeroPage = () => {
+
+  const navigate =useNavigate()
   return (
     <div className="hero-container">
       <Container>
@@ -11,12 +14,11 @@ const HeroPage = () => {
             <div className="hero-content">
               <h1>Welcome to Our Online Learning Platform</h1>
               <p>Unlock your potential with our wide range of digital courses.</p>
-              <Button variant="primary" href="/courses">Explore Courses</Button>
+              <Button variant="primary" onClick={()=>navigate('/viewProducts')}>Explore Courses</Button>
             </div>
           </Col>
           <Col lg={6} md={12}>
             <div className="hero-image">
-              {/* Replace the image source with your own */}
               <img src="hero-image.jpg" alt="Hero" />
             </div>
           </Col>

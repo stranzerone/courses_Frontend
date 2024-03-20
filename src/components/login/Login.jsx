@@ -61,7 +61,7 @@ const Login = () => {
           <button type="submit" className="btn btn-success w-100">Login</button>
         </form>
         <div className="text-center mt-3">
-          <p  className="text-decoration-none">Don't have an account? Sign up here.</p>
+          <p   onClick={()=>navigate("/signup")}  className="text-decoration-none  text-primary"   style={{cursor:"pointer"}}>Don't have an account? Sign up here.</p>
         </div>
         {error && <p className="text-danger">{error}</p>}
       </div>

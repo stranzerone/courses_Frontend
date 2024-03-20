@@ -58,7 +58,7 @@ try{
         <Navbar.Brand href="#" className="navbar-logo">
           Logo
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{background:"white"}} />
         <Navbar.Collapse id="basic-navbar-nav" className="navbar-links">
           <Nav className="mr-auto">
           <Nav.Link as={Link} to="/home" className="nav-link">Home</Nav.Link>
@@ -70,7 +70,7 @@ try{
           {/* <Nav.Link as={Link} to="/profile" className="nav-link">Profile</Nav.Link> */}
           </Nav>
       {type==='admin'?  <DropdownButton
-    className="btn-success"
+    className="btn btn-success"
     title="ADMIN"
     id="dropdown-menu"
   >
@@ -88,7 +88,7 @@ try{
     {/* Add more Dropdown.Item elements as needed */}
   </DropdownButton>:<Button className='btn-success'>User</Button>}
          
-      <Button variant="outline-light" className="nav-button" onClick={Logout}>Logout</Button>
+      <Button variant="outline-light" className="nav-button " onClick={Logout}>Logout</Button>
         </Navbar.Collapse>
       </Navbar>
     </div>

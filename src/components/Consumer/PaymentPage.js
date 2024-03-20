@@ -140,7 +140,7 @@ try{
     return (
         <div className="container"  style={{position:'center'}}>
         <h1>Payment Page</h1>
-        {product &&  rStatus==="1"? <p>{product.price - product.price *20/100}</p>:product ?<p>{product.price}</p>:null}
+        {product &&  rStatus==="1"? <h1>{product.price - product.price *20/100}</h1>:product ?<h1>{product.price}</h1>:null}
         <div className="container mt-5">
       <div className="mb-3">
         <label htmlFor="referral" className="form-label">Have A Referral Code</label>
@@ -162,10 +162,16 @@ try{
         </div>
         {rStatus==="1"?<p>code Is applied</p>:rStatus==='2'?<p>invalid refralCode</p>:null}
       </div>
+      <div>refral code : 6e6ed3p3</div>
     </div>
         <button className="btn btn-primary" onClick={handlePayment} disabled={loading}>
             {loading ? 'Processing...' : 'Pay Now'}
         </button>
+        <div>
+            card no : 5267 3181 8797 5449
+            cvv    :123 
+            exp   :12/30
+        </div>
         {loading && (
             <div className="loader-container">
                 <div className="loader"></div>
