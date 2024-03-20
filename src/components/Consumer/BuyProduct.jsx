@@ -13,8 +13,22 @@ const SingleProductPage = () => {
 const navigate = useNavigate()
     useEffect(() => {
         const fetchProductById = async () => {
+
+
+            const token = localStorage.getItem('token');
+      
+            if (token) {
+           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            }
             try {
-                const response = await axios.get(`http://localhost:5000/product/productById/${id}`);
+
+                const token = localStorage.getItem('token');
+  
+                if (token) {
+               axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                }
+
+                const response = await axios.get(uri+`/product/productById/${id}`);
                 setProduct(response.data);
             } catch (error) {
                 setError(error);
@@ -38,9 +52,13 @@ const navigate = useNavigate()
     const handlePayment = async () => {
         try {
            
+            const token = localStorage.getItem('token');
+  
+            if (token) {
+           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            }
            
             const response = await axios.get(uri+"/transactions/order");
-           console.log(typeof response.data)
 
            const orderId = response.data
             const options = {
@@ -65,7 +83,6 @@ const navigate = useNavigate()
                 }
             };
             const rzp = new window.Razorpay(options);
-            console.log('Razorpay Options:', options);
             rzp.open();
         } catch (error) {
             

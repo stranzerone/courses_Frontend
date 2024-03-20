@@ -51,7 +51,6 @@ const navigation  = useNavigate()
 
         try {
             const response = await axios.put(uri+`/product/updateProduct/${id}`, updatedProduct);
-            console.log(response.data);
             if (response.status === 200) {
                 alert("Product updated successfully");
               navigation('/viewProducts') // Redirect to the product list page

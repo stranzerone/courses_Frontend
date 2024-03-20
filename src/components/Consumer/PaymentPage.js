@@ -16,9 +16,8 @@ const navigate = useNavigate()
 const fetchProductById = async () => {
     try {
         const response = await axios.get(uri+`/product/productById/${id}`);
-        console.log(response)
         setProduct(response.data);
-        setPrice(product.price)
+        setPrice(response.data.price)
     } catch (error) {
       console.error(error)
     } 
@@ -28,7 +27,6 @@ const fetchProductById = async () => {
 
 const handleApplyReferral = async() => {
     // Send referral code to backend
-    console.log(refral,"handle")
    try{
 
     const token = localStorage.getItem('token');
@@ -38,13 +36,10 @@ const handleApplyReferral = async() => {
         }
 
 const code = await axios.post(uri+"/auth/findRefral",{refralCode:refral})
-console.log(code)
 if(code.status===200){
     setrStatus("1")
     setPrice(product.price - product.price *20/100)
-    console.log(code)
 }else{
-    console.log("ssss")
     setrStatus('2')
     setPrice(product.price)
 }
@@ -58,7 +53,6 @@ if(code.status===200){
 
 
 const paymentSuccessHandle = async(response)=>{
-    console.log(response)
 try{
 
     const newPayment = axios.post(uri+"/transactions/paymentSuccess",{response,id,product,price})

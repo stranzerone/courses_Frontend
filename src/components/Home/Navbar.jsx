@@ -22,7 +22,6 @@ try{
 
 
   const response =await axios.get(uri+'/auth/type')
-  console.log(response.data.user)
   setType(response.data.user)
 
 }catch(error){
@@ -51,12 +50,6 @@ try{
 
 
 
-  const handleItemClick = (item) => {
-    // Navigate to the clicked item, you can use React Router or any other routing method here
-    console.log(`Navigating to ${item}`);
-    // Example: window.location.href = `/some-path/${item}`;
-  };
-
   // If type is not found in localStorage, hide the navbar
  
   return (
@@ -81,14 +74,14 @@ try{
     title="ADMIN"
     id="dropdown-menu"
   >
-    <Dropdown.Item eventKey="item1" onClick={() => handleItemClick("item1")}>
+    <Dropdown.Item eventKey="item1" >
     <NavLink to='/dashboard'>Dashboard</NavLink>
     </Dropdown.Item>
-    <Dropdown.Item eventKey="item2" onClick={() => handleItemClick("item2")}>
+    <Dropdown.Item eventKey="item2" >
     <NavLink to='/addCourse'>Add product</NavLink>
 
     </Dropdown.Item>
-    <Dropdown.Item eventKey="item2" onClick={() => handleItemClick("item2")}>
+    <Dropdown.Item eventKey="item2" >
     <NavLink to='/ordersPage'>Orders</NavLink>
 
     </Dropdown.Item>

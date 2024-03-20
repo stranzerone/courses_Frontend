@@ -10,7 +10,6 @@ const UserProfile = () => {
 
     const token = localStorage.getItem('token');
     if (token) {
-        console.log(token)
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     }
 
@@ -24,7 +23,6 @@ const UserProfile = () => {
 
       const response = await axios.get(uri+'/auth/findUser');
       setUserData(response.data.foundUser);
-      console.log(response.data.foundUser)
     } catch (error) {
       console.error('Error fetching user data:', error);
     }

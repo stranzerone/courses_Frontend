@@ -37,10 +37,8 @@ const ProfilePage = () => {
         }
 
         const response = await axios.get("http://localhost:5000/product/myPoducts");
-        console.log(response)
         if (response && response.data) {
           const ids = response.data.map(product => product.ProductId);
-          console.log(ids,"id")
           setProductIds(ids);
           const fetchedProducts = await fetchProducts(ids); // Pass ids to fetchProducts
           setProducts(fetchedProducts);
